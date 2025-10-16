@@ -155,41 +155,18 @@
   </section>
 
   <script>
-    // Grab elements
     const logBtn = document.getElementById("logBtn");
-    const alertBtn = document.getElementById("alertBtn");
-    const promptBtn = document.getElementById("promptBtn");
-    const promptOutput = document.getElementById("promptOutput");
-    const textBtn = document.getElementById("textBtn");
-    const textDemo = document.getElementById("textDemo");
-    const listBtn = document.getElementById("listBtn");
-    const listInput = document.getElementById("listInput");
-    const demoList = document.getElementById("demoList");
-    const mathBtn = document.getElementById("mathBtn");
-    const num1 = document.getElementById("num1");
-    const num2 = document.getElementById("num2");
-    const sumResult = document.getElementById("sumResult");
-    const toggleBtn = document.getElementById("toggleBtn");
-    const toggleBox = document.getElementById("toggleBox");
-    const colorBtn = document.getElementById("colorBtn");
-    const incrementBtn = document.getElementById("incrementBtn");
-    const decrementBtn = document.getElementById("decrementBtn");
-    const counterValue = document.getElementById("counterValue");
-    const clock = document.getElementById("clock");
-    const keyOutput = document.getElementById("keyOutput");
-    const imgBtn = document.getElementById("imgBtn");
-    const demoImage = document.getElementById("demoImage");
-
-    // Console
     logBtn.addEventListener("click", () => {
       console.log("Hello from JavaScript!");
     });
 
-    // Alert + Prompt
+    const alertBtn = document.getElementById("alertBtn");
     alertBtn.addEventListener("click", () => {
       alert("This is an alert!");
     });
-
+    
+    const promptBtn = document.getElementById("promptBtn");
+    const promptOutput = document.getElementById("promptOutput");
     promptBtn.addEventListener("click", () => {
       const name = prompt("What is your name?");
       if (name) {
@@ -197,14 +174,17 @@
       }
     });
 
-    // Change text & style
+    const textBtn = document.getElementById("textBtn");
+    const textDemo = document.getElementById("textDemo");
     textBtn.addEventListener("click", () => {
       textDemo.innerText = "The text has changed!";
       textDemo.style.color = "red";
       textDemo.style.fontWeight = "bold";
     });
 
-    // List manipulation
+    const listBtn = document.getElementById("listBtn");
+    const listInput = document.getElementById("listInput");
+    const demoList = document.getElementById("demoList");
     listBtn.addEventListener("click", () => {
       if (listInput.value.trim() !== "") {
         const li = document.createElement("li");
@@ -214,20 +194,23 @@
       }
     });
 
-    // Math & input
-    mathBtn.addEventListener("click", () => {
+    const mathBtn = document.getElementById("mathBtn");
+    const num1 = document.getElementById("num1");
+    const num2 = document.getElementById("num2");
+    const sumResult = document.getElementById("sumResult");    mathBtn.addEventListener("click", () => {
       const n1 = parseFloat(num1.value);
       const n2 = parseFloat(num2.value);
       const sum = n1 + n2;
       sumResult.innerText = `Sum: ${sum}`;
     });
 
-    // Show/hide box
+    const toggleBtn = document.getElementById("toggleBtn");
+    const toggleBox = document.getElementById("toggleBox");
     toggleBtn.addEventListener("click", () => {
       toggleBox.style.display = toggleBox.style.display === "none" ? "block" : "none";
     });
 
-    // Change background color
+    const colorBtn = document.getElementById("colorBtn");
     colorBtn.addEventListener("click", () => {
       const r = Math.floor(Math.random() * 256);
       const g = Math.floor(Math.random() * 256);
@@ -235,8 +218,9 @@
       document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
     });
 
-    // Counter
-    let count = 0;
+const incrementBtn = document.getElementById("incrementBtn");
+const decrementBtn = document.getElementById("decrementBtn");
+const counterValue = document.getElementById("counterValue");    let count = 0;
     incrementBtn.addEventListener("click", () => {
       count++;
       counterValue.innerText = count;
@@ -246,22 +230,24 @@
       counterValue.innerText = count;
     });
 
-    // Clock
-    function updateClock() {
+const clock = document.getElementById("clock");
+function updateClock() {
       const now = new Date();
       clock.innerText = now.toLocaleTimeString();
     }
-    setInterval(updateClock, 1000);
-    updateClock();
+setInterval(updateClock, 1000);
+updateClock();
 
-    // Keyboard Event
-    document.addEventListener("keydown", (event) => {
+    
+const keyOutput = document.getElementById("keyOutput");
+document.addEventListener("keydown", (event) => {
       keyOutput.innerText = `You pressed: ${event.key}`;
-    });
+});
 
-    // Image change
-    let toggled = false;
-    imgBtn.addEventListener("click", () => {
+const imgBtn = document.getElementById("imgBtn");
+const demoImage = document.getElementById("demoImage");
+let toggled = false;
+imgBtn.addEventListener("click", () => {
       if (toggled) {
         demoImage.src = "https://placebeard.it/200x200";
       } else {
